@@ -3,7 +3,13 @@
 # this pack is valid for apps with a hello.txt in the root
 if [ -f $1/hello.txt ]; then
   echo "HelloFramework"
-  exit 0
+  VERSION="21.09.0"
+  FILE_NAME="poppler-${VERSION}.tgz"
+  CACHE=“cache”
+  mkdir $CACHE
+  curl https://poppler.freedesktop.org/poppler-21.09.0.tar.xz > cache/$FILE_NAME
+  tar -xJf $CACHE/poppler-21.09.0.tgz 
+  echo 'export PATH="/app/$CACHE/poppler-21.09.0/utils:$PATH"'
 else
   exit 1
 fi
