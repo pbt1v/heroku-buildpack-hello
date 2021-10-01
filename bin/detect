@@ -5,9 +5,9 @@ if [ -f $1/hello.txt ]; then
   echo "HelloFramework"
   VERSION="21.09.0"
   FILE_NAME="poppler-${VERSION}.tgz"
-  CACHE=“cache”
+  CACHE="cache"
   mkdir $CACHE
-  curl https://poppler.freedesktop.org/poppler-21.09.0.tar.xz > cache/$FILE_NAME
+  curl https://poppler.freedesktop.org/poppler-21.09.0.tar.xz > $CACHE/$FILE_NAME
   tar -xJf $CACHE/poppler-21.09.0.tgz 
   echo 'export PATH="/app/$CACHE/poppler-21.09.0/utils:$PATH"'
 else
